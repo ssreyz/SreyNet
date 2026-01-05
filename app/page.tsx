@@ -22,7 +22,8 @@ export default function Portfolio() {
       tech: ["ESP32", "AWS IoT Core", "Lambda", "DynamoDB", "MQTT"],
       github: "https://github.com/ssreyz/Weather-CloudBridge",
       metrics: "Real-time streaming • Event-driven architecture",
-      category: "IoT/Cloud"
+      category: "IoT/Cloud",
+      image: "/projects/weather-cloudbridge.png"
     },
     {
       title: "PDF Buddy",
@@ -30,7 +31,8 @@ export default function Portfolio() {
       tech: ["Next.js", "Gemini API", "LangChain", "Node.js"],
       github: "https://github.com/ssreyz/pdf-buddy",
       metrics: "Production-grade • Async processing",
-      category: "AI/ML"
+      category: "AI/ML",
+      image: "/projects/pdf-buddy.png"
     },
     {
       title: "Calcharo Calculator",
@@ -38,7 +40,8 @@ export default function Portfolio() {
       tech: ["HTML5", "CSS3", "JavaScript"],
       github: "https://github.com/ssreyz/Calcharo",
       metrics: "Responsive design • Real-time computation",
-      category: "Web"
+      category: "Web",
+      image: "/projects/calcharo.png"
     },
     {
       title: "Simon Memory Game",
@@ -46,7 +49,8 @@ export default function Portfolio() {
       tech: ["HTML5", "CSS3", "JavaScript", "jQuery"],
       github: "https://github.com/ssreyz/Simon-Game",
       metrics: "Progressive difficulty • Real-time validation",
-      category: "Web"
+      category: "Web",
+      image: "/projects/simon-game.png"
     },
     {
       title: "Diabetes Prediction Model",
@@ -54,7 +58,8 @@ export default function Portfolio() {
       tech: ["Python", "Scikit-learn", "SVM", "Pandas"],
       github: "https://github.com/ssreyz/Diabetes-Prediction",
       metrics: "79% accuracy • 8% improvement over baseline",
-      category: "ML"
+      category: "ML",
+      image: "/projects/diabetes-prediction.png"
     },
     {
       title: "SONAR Rock and Mine Prediction",
@@ -62,7 +67,8 @@ export default function Portfolio() {
       tech: ["Python", "Scikit-learn", "Logistic Regression", "Pandas"],
       github: "https://github.com/ssreyz/SONAR-Rock-and-Mine-Prediction",
       metrics: "Binary classification • Sonar signal processing",
-      category: "ML"
+      category: "ML",
+      image: "/projects/sonar-prediction.png"
     },
     {
       title: "Pizza Sales Analysis",
@@ -70,7 +76,8 @@ export default function Portfolio() {
       tech: ["MySQL", "SQL", "Data Analytics"],
       github: "https://github.com/ssreyz/Crusty-pizza-sales-analysis",
       metrics: "48.6K records • Revenue insights",
-      category: "Data"
+      category: "Data",
+      image: "/projects/pizza-sales.png"
     }
   ];
 
@@ -180,7 +187,7 @@ export default function Portfolio() {
               { label: "PROJECTS", value: "10+" },
               { label: "CERTIFICATIONS", value: "3" },
               { label: "TECH STACK", value: "20+" },
-              { label: "CGPA", value: "7.76" }
+              { label: "CGPA", value: "7.5+" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-4xl font-bold text-cyan-400 font-mono">{stat.value}</div>
@@ -208,8 +215,21 @@ export default function Portfolio() {
                 onMouseLeave={() => setActiveProject(null)}
                 className="group relative border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 backdrop-blur transition-all duration-300"
               >
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-col md:flex-row gap-6 p-8">
+                  {/* Project Image */}
+                  <div className="md:w-1/3 flex-shrink-0">
+                    <div className="relative aspect-video rounded-lg overflow-hidden border border-gray-700 group-hover:border-cyan-500/50 transition-all">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="flex-1 flex justify-between items-start">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
                         <span className="text-xs font-mono text-gray-600">0{idx + 1}</span>
@@ -234,7 +254,7 @@ export default function Portfolio() {
                       href={project.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-cyan-400 transition-colors"
+                      className="text-gray-600 hover:text-cyan-400 transition-colors ml-4"
                     >
                       <ExternalLink size={24} />
                     </a>
@@ -282,28 +302,48 @@ export default function Portfolio() {
       </section>
 
       {/* Certifications */}
-      <section className="py-32 px-8 border-t border-cyan-500/20">
+      <section className="py-32 px-8 border-t border-cyan-500/20 relative z-10">
         <div className="max-w-7xl mx-auto">
           <h3 className="text-2xl font-mono text-cyan-400 mb-8">CERTIFICATIONS</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-gray-800 bg-gray-900/20 p-6">
+            <a 
+              href="/certificates/aws-cloud-practitioner.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/certificates/aws-cloud-practitioner.pdf', '_blank');
+              }}
+              className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-6 transition-all duration-300 group cursor-pointer relative z-10"
+            >
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-xl font-bold mb-2">AWS Certified Cloud Practitioner</h4>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">AWS Certified Cloud Practitioner</h4>
                   <p className="text-sm text-gray-500 font-mono">Amazon Web Services • 2025</p>
+                  <p className="text-xs text-cyan-400 font-mono mt-2">Click to view certificate →</p>
                 </div>
                 <Award className="text-cyan-400" size={24} />
               </div>
-            </div>
-            <div className="border border-gray-800 bg-gray-900/20 p-6">
+            </a>
+            <a 
+              href="/certificates/aws-iot-foundations.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/certificates/aws-iot-foundations.pdf', '_blank');
+              }}
+              className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-6 transition-all duration-300 group cursor-pointer relative z-10"
+            >
               <div className="flex justify-between items-start">
                 <div>
-                  <h4 className="text-xl font-bold mb-2">AWS IoT Foundations</h4>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">AWS IoT Foundations</h4>
                   <p className="text-sm text-gray-500 font-mono">Amazon Web Services • 2025</p>
+                  <p className="text-xs text-cyan-400 font-mono mt-2">Click to view certificate →</p>
                 </div>
                 <Award className="text-cyan-400" size={24} />
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

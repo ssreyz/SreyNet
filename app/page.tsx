@@ -180,7 +180,7 @@ export default function Portfolio() {
               { label: "PROJECTS", value: "10+" },
               { label: "CERTIFICATIONS", value: "3" },
               { label: "TECH STACK", value: "20+" },
-              { label: "CGPA", value: "7.5+" }
+              { label: "CGPA", value: "7.76" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-4xl font-bold text-cyan-400 font-mono">{stat.value}</div>

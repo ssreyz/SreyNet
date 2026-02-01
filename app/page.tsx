@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, MapPin, Award, Terminal, Database, Cpu, CloudCog, ChevronRight, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, MapPin, Award, Terminal, Database, Cpu, CloudCog, ChevronRight, ExternalLink, Briefcase, Download, FileText } from 'lucide-react';
 
 export default function Portfolio() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -17,16 +17,7 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Weather-CloudBridge",
-      description: "Serverless IoT pipeline with ESP32 publishing real-time environmental data to AWS IoT Core via MQTT protocol. Lambda functions process sensor streams and persist to DynamoDB.",
-      tech: ["ESP32", "AWS IoT Core", "Lambda", "DynamoDB", "MQTT"],
-      github: "https://github.com/ssreyz/Weather-CloudBridge",
-      metrics: "Real-time streaming • Event-driven architecture",
-      category: "IoT/Cloud",
-      image: "/projects/weather-cloudbridge.png"
-    },
-    {
-      title: "PDF Buddy",
+      title: "API integrated PDF RAG",
       description: "AI-powered document intelligence platform leveraging Gemini API and LangChain for semantic PDF analysis, summarization, and natural language querying.",
       tech: ["Next.js", "Gemini API", "LangChain", "Node.js"],
       github: "https://github.com/ssreyz/pdf-buddy",
@@ -69,6 +60,24 @@ export default function Portfolio() {
       metrics: "Binary classification • Sonar signal processing",
       category: "ML",
       image: "/projects/sonar-prediction.png"
+    },
+    {
+      title: "Cloud Based Agricultural IoT",
+      description: "Serverless IoT pipeline with ESP32 publishing real-time environmental data to AWS IoT Core via MQTT protocol. Lambda functions process sensor streams and persist to DynamoDB.",
+      tech: ["ESP32", "AWS IoT Core", "Lambda", "DynamoDB", "MQTT"],
+      github: "https://github.com/ssreyz/Weather-CloudBridge",
+      metrics: "Real-time streaming • Event-driven architecture",
+      category: "IoT/Cloud",
+      image: "/projects/weather-cloudbridge.png"
+    },
+    {
+      title: "Smart Home Automation & Security System",
+      description: "Built an integrated automation system for fire detection and intrusion monitoring, combining sensor-based safety logic with real-time alerts via buzzer and OLED display.",
+      tech:  ["Arduino", "Sensors (PIR, Hall-Effect, Temperature)", "OLED Display", "Embedded C"],
+      github: "",
+      metrics: "Real-time sensor monitoring • Embedded system optimization",
+      category: "IoT",
+      image: "/projects/home.png"
     },
     {
       title: "Pizza Sales Analysis",
@@ -119,8 +128,9 @@ export default function Portfolio() {
           </div>
           <nav className="flex gap-8 text-sm font-mono">
             <a href="#about" className="text-gray-400 hover:text-cyan-400 transition-colors">ABOUT</a>
+            <a href="#experience" className="text-gray-400 hover:text-cyan-400 transition-colors">EXPERIENCE</a>
             <a href="#projects" className="text-gray-400 hover:text-cyan-400 transition-colors">PROJECTS</a>
-            <a href="#tech" className="text-gray-400 hover:text-cyan-400 transition-colors">TECH</a>
+            <a href="#education" className="text-gray-400 hover:text-cyan-400 transition-colors">EDUCATION</a>
             <a href="#contact" className="text-gray-400 hover:text-cyan-400 transition-colors">CONTACT</a>
           </nav>
         </div>
@@ -131,8 +141,8 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <div className="space-y-8">
             <div className="flex items-center gap-4 text-sm font-mono text-cyan-400">
-              <div className="h-px w-16 bg-cyan-400"></div>
-              <span>ELECTRONICS & COMMUNICATION ENGINEER</span>
+              <div className="h-px bg-cyan-400"></div>
+              <span>Software & IoT Developer | AWS Certified | Full-stack | Embedded • Serverless • AI/ML | Database</span>
             </div>
             
             <h1 className="text-7xl font-bold tracking-tight">
@@ -154,6 +164,19 @@ export default function Portfolio() {
                 <Mail size={18} />
                 GET IN TOUCH
                 <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="/resume/Srijani-Dey-Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('/resume/Srijani-Dey-Resume.pdf', '_blank');
+                }}
+                className="group flex items-center gap-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 px-8 py-4 transition-all font-mono text-sm cursor-pointer relative z-10"
+              >
+                <Download size={18} />
+                RESUME
               </a>
               <a href="https://github.com/ssreyz" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 border border-gray-800 px-8 py-4 transition-all font-mono text-sm cursor-pointer">
                 <Github size={18} />
@@ -195,6 +218,65 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-32 px-8 border-t border-cyan-500/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-16">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
+            <h2 className="text-4xl font-bold font-mono text-cyan-400">EXPERIENCE</h2>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+          </div>
+
+          {
+          
+          <div className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-8 transition-all duration-300 group mb-6">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">
+                  Cloud Computing & IoT Intern
+                </h3>
+                <h4 className="text-xl text-cyan-400 font-mono mb-3">Citra Tek Inc.</h4>
+                <p className="text-sm text-gray-500 font-mono mb-4">Sep, 2025 – Dec, 2025</p>
+                
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-start gap-2 text-gray-400">
+                    <div className="w-1 h-1 bg-cyan-400 rounded-full mt-2"></div>
+                    <span className="text-sm">Designed and implemented a serverless AWS cloud architecture for an agricultural IoT solution.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-gray-400">
+                    <div className="w-1 h-1 bg-cyan-400 rounded-full mt-2"></div>
+                    <span className="text-sm">Engineered secure device-to-cloud communication using AWS IoT Core with X.509 certificate authentication.</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-xs font-mono bg-gray-800/50 text-gray-400 border border-gray-700 px-3 py-1">AWS Cloud Architecture</span>
+                  <span className="text-xs font-mono bg-gray-800/50 text-gray-400 border border-gray-700 px-3 py-1">IoT Implementation</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <a 
+                  href="/certificates/internship-certificate.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open('/certificates/internship-certificate.pdf', '_blank');
+                  }}
+                  className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer relative z-10 border border-cyan-400/30 px-4 py-2 hover:border-cyan-400 hover:bg-cyan-400/10"
+                >
+                  <FileText size={16} />
+                  VIEW CERTIFICATE
+                </a>
+              </div>
+            </div>
+          </div>
+
+          }
         </div>
       </section>
 
@@ -348,6 +430,130 @@ export default function Portfolio() {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" className="py-32 px-8 border-t border-cyan-500/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-16">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
+            <h2 className="text-4xl font-bold font-mono text-cyan-400">EDUCATION</h2>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+          </div>
+
+          <div className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-8 transition-all duration-300 group">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+              <div className="flex-1">
+                <h3 className="text-3xl font-bold mb-3 group-hover:text-cyan-400 transition-colors">
+                  Bachelor of Technology
+                </h3>
+                <h4 className="text-xl text-cyan-400 font-mono mb-4">Electronics & Communication Engineering</h4>
+                <p className="text-lg text-gray-400 mb-4">St. Thomas College of Engineering & Technology</p>
+                <p className="text-sm text-gray-500 font-mono mb-4">Kolkata, West Bengal</p>
+                
+                <div className="flex flex-wrap gap-4 mt-6">
+                  <div className="border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 rounded">
+                    <p className="text-xs text-gray-400 font-mono mb-1">CGPA</p>
+                    <p className="text-2xl font-bold text-cyan-400 font-mono">7.76</p>
+                  </div>
+                  <div className="border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 rounded">
+                    <p className="text-xs text-gray-400 font-mono mb-1">Duration</p>
+                    <p className="text-lg font-bold text-cyan-400 font-mono">2022 - 2026</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:w-1/3">
+                <h5 className="text-sm font-mono text-cyan-400 mb-3">KEY COURSEWORK</h5>
+                <div className="space-y-2">
+                  {[
+                    "Embedded Systems",
+                    "IoT & Cloud Computing",
+                    "Digital Signal Processing",
+                    "Machine Learning",
+                    "Microprocessors",
+                    "Communication Networks"
+                  ].map((course, i) => (
+                    <div key={i} className="flex items-center gap-2 text-gray-400">
+                      <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
+                      <span className="text-sm font-mono">{course}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements & Training Section */}
+      <section className="py-32 px-8 border-t border-cyan-500/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center gap-4 mb-16">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-cyan-500/50"></div>
+            <h2 className="text-4xl font-bold font-mono text-cyan-400">ACHIEVEMENTS_&_TRAINING</h2>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-cyan-500/50"></div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="border border-gray-800 bg-gray-900/20 p-6 hover:border-cyan-500/50 transition-all group">
+              <Award className="text-cyan-400 mb-4" size={32} />
+              <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Smart India Hackathon</h4>
+              <p className="text-sm text-gray-400 font-mono mb-4">National Level Competition • 2023</p>
+              <p className="text-sm text-gray-500 mb-4">Participated in India's largest hackathon initiative focusing on innovative solutions for real-world problems.</p>
+              <a 
+                href="/certificates/smart-india-hackathon.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('/certificates/smart-india-hackathon.pdf', '_blank');
+                }}
+                className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer relative z-10"
+              >
+                VIEW CERTIFICATE →
+              </a>
+            </div>
+
+            <div className="border border-gray-800 bg-gray-900/20 p-6 hover:border-cyan-500/50 transition-all group">
+              <Terminal className="text-cyan-400 mb-4" size={32} />
+              <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">BSNL Telecom Training</h4>
+              <p className="text-sm text-gray-400 font-mono mb-4">Telecom Training Institute</p>
+              <p className="text-sm text-gray-500 mb-4">One-month hands-on training in Telecommunication and Network infrastructure covering core telecom concepts.</p>
+              <a 
+                href="/certificates/bsnl-training.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('/certificates/bsnl-training.pdf', '_blank');
+                }}
+                className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer relative z-10"
+              >
+                VIEW CERTIFICATE →
+              </a>
+            </div>
+
+            <div className="border border-gray-800 bg-gray-900/20 p-6 hover:border-cyan-500/50 transition-all group">
+              <Briefcase className="text-cyan-400 mb-4" size={32} />
+              <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">JPMorgan Chase & Co.</h4>
+              <p className="text-sm text-gray-400 font-mono mb-4">Virtual Experience Program</p>
+              <p className="text-sm text-gray-500 mb-4">Completed virtual simulation on Software Engineering, gaining hands-on experience in financial technology systems.</p>
+              <a 
+                href="/certificates/jpmorgan-simulation.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open('/certificates/jpmorgan-simulation.pdf', '_blank');
+                }}
+                className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer relative z-10"
+              >
+                VIEW CERTIFICATE →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-32 px-8 border-t border-cyan-500/20 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
@@ -369,6 +575,19 @@ export default function Portfolio() {
             >
               <Mail size={18} />
               EMAIL
+            </a>
+            <a 
+              href="/resume/Srijani-Dey-Resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/resume/Srijani-Dey-Resume.pdf', '_blank');
+              }}
+              className="flex items-center gap-2 border border-gray-800 hover:border-cyan-400 px-8 py-4 transition-all font-mono text-sm cursor-pointer relative z-10"
+            >
+              <Download size={18} />
+              RESUME
             </a>
             <a 
               href="https://linkedin.com/in/srijani-dey" 

@@ -25,24 +25,7 @@ export default function Portfolio() {
       category: "AI/ML",
       image: "/projects/pdf-buddy.png"
     },
-    {
-      title: "Calcharo Calculator",
-      description: "Modern web-based calculator application with intuitive UI and responsive design. Implements core arithmetic operations with real-time calculation display and error handling.",
-      tech: ["HTML5", "CSS3", "JavaScript"],
-      github: "https://github.com/ssreyz/Calcharo",
-      metrics: "Responsive design • Real-time computation",
-      category: "Web",
-      image: "/projects/calcharo.png"
-    },
-    {
-      title: "Simon Memory Game",
-      description: "Interactive memory game with progressive difficulty mechanics, visual animations, and audio feedback. Features sequence generation, pattern recognition validation, and score tracking system.",
-      tech: ["HTML5", "CSS3", "JavaScript", "jQuery"],
-      github: "https://github.com/ssreyz/Simon-Game",
-      metrics: "Progressive difficulty • Real-time validation",
-      category: "Web",
-      image: "/projects/simon-game.png"
-    },
+    
     {
       title: "Diabetes Prediction Model",
       description: "Machine learning classifier utilizing Support Vector Machines with optimized hyperparameters, feature engineering, and cross-validation techniques.",
@@ -71,7 +54,7 @@ export default function Portfolio() {
       image: "/projects/weather-cloudbridge.png"
     },
     {
-      title: "Smart Home Automation & Security System",
+      title: "Cloud Based Smart Home Automation & Security System",
       description: "Built an integrated automation system for fire detection and intrusion monitoring, combining sensor-based safety logic with real-time alerts via buzzer and OLED display.",
       tech:  ["Arduino", "Sensors (PIR, Hall-Effect, Temperature)", "OLED Display", "Embedded C"],
       github: "",

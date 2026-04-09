@@ -407,6 +407,27 @@ export default function Portfolio() {
                 <Award className="text-cyan-400" size={24} />
               </div>
             </a>
+
+            <a 
+              href="/certificates/aws-ai-practitioner.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/certificates/aws-ai-practitioner.pdf', '_blank');
+              }}
+              className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-6 transition-all duration-300 group cursor-pointer relative z-10"
+            >
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">AWS AI Practitioner</h4>
+                  <p className="text-sm text-gray-500 font-mono">Amazon Web Services • 2026</p>
+                  <p className="text-xs text-cyan-400 font-mono mt-2">Click to view certificate →</p>
+                </div>
+                <Award className="text-cyan-400" size={24} />
+              </div>
+            </a>
+
             <a 
               href="/certificates/aws-iot-foundations.pdf" 
               target="_blank" 
@@ -426,6 +447,27 @@ export default function Portfolio() {
                 <Award className="text-cyan-400" size={24} />
               </div>
             </a>
+
+            <a 
+              href="/certificates/claude-code-in-action.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('/certificates/claude-code-in-action.pdf', '_blank');
+              }}
+              className="border border-gray-800 hover:border-cyan-500/50 bg-gray-900/20 p-6 transition-all duration-300 group cursor-pointer relative z-10"
+            >
+              <div className="flex justify-between items-start">
+                <div>
+                  <h4 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">Claude Code in Action</h4>
+                  <p className="text-sm text-gray-500 font-mono">Amazon Web Services • 2026</p>
+                  <p className="text-xs text-cyan-400 font-mono mt-2">Click to view certificate →</p>
+                </div>
+                <Award className="text-cyan-400" size={24} />
+              </div>
+            </a>
+
           </div>
         </div>
       </section>
